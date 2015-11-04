@@ -1,5 +1,5 @@
+//class untuk uniTest3
 import java.util.*;
-import java.lang.*;
 /**
  * Write a description of class Vector4D here.
  * 
