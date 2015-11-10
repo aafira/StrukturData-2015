@@ -25,7 +25,7 @@ public class Merge
             sumberFile3 = new FileInputStream(file3);
             hasilFile = new FileOutputStream(sasaran);
             
-            /*
+            /*gak bisa langsung pakai tambah(+)
             int karakter = sumberFile1.read()+sumberFile2.read()+sumberFile3.read();        
             // Selama masih ada data yang masih bisa dibaca
             while (karakter != -1) {
