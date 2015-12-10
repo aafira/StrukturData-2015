@@ -13,16 +13,22 @@ import java.net.UnknownHostException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.io.Reader;
 import java.io.OutputStreamWriter;
 import java.io.InputStream;
 import java.io.BufferedInputStream;
+
+
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 
 public class Chat
 {
     public void chat(String pesanChat) 
                 throws UnknownHostException, IOException {
         // 0. Buka socket
-        koneksi = new Socket("192.168.43.13", 33333);
+        koneksi = new Socket("localhost", 33333);
 
         // Kirim perintah untuk informasi namaDomain
         kirimPesan(pesanChat);
@@ -33,12 +39,12 @@ public class Chat
         // Tutup socket-nya => dengan sendirinya menutup semua stream
         koneksi.close();
     }
-    
+
     public void kirimPesan(String pesan) throws IOException {
         // 1 & 2. Minta socket untuk ditulis dan Langsung dibuka
         OutputStream keluaran = koneksi.getOutputStream();
         // Note: Karena protokol-nya berbasis teks pakai writer aja.
-        Writer keluaranWriter = new OutputStreamWriter(keluaran); 
+        Writer keluaranWriter = new OutputStreamWriter(keluaran);
         // 3. Selagi ada data kirim
         keluaranWriter.write(pesan);
         // Syarat protokol-nya, semua perintah diakhiri dengan: CR & LF
@@ -55,7 +61,7 @@ public class Chat
         System.out.print("Server: ");
         
         // Selagi masih ada data baca 
-        String balasan = "";
+        
         int data = masukanBuffer.read();
         while (data != -1) {
             System.out.write((char) data);
@@ -63,10 +69,8 @@ public class Chat
             
             data = masukanBuffer.read();                       
         }
-        
-        System.out.println("Client: "+balasan);
-        kirimPesan(balasan);
     }
     
     private Socket koneksi = null;
+    String balasan = "";
 }
