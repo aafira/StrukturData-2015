@@ -24,28 +24,26 @@ public class ProcessClientThread implements Runnable {
       try {
         String ip = koneksi.getInetAddress().getHostAddress();
         System.out.println("Dari: " + ip);
-        String baris ;
+        String baris;
         String angkaPeriksaStr = Integer.toString(jumlah);
-
-             
-                    
+            
         do{
             // Ambil dan tampilkan masukan
             InputStream masukan = koneksi.getInputStream();
             BufferedReader masukanReader = new BufferedReader(new InputStreamReader(masukan)); 
             baris = masukanReader.readLine();
-            //baris.toUpperCase();
+            baris = baris.toUpperCase();
             System.out.println(baris);   
                         
-            if((baris.charAt(0))=='1'){
+            if((baris.charAt(0))=='T'){
                 jumlah++;
                 System.out.println("jumlah "+jumlah); 
             }
-            else if((baris.charAt(0))=='2'){
+            else if((baris.charAt(0))=='K'){
                 jumlah--;
                 System.out.println("jumlah "+jumlah); 
             }
-            else if((baris.charAt(0))=='3'){
+            else if((baris.charAt(0))=='J'){
                 // Kirim ke client
                 OutputStream keluaran = koneksi.getOutputStream();
                 BufferedWriter keluaranBuf = new BufferedWriter(new OutputStreamWriter(keluaran)); 
@@ -56,7 +54,7 @@ public class ProcessClientThread implements Runnable {
                 keluaranBuf.flush();                
                 //}
             }
-        }while((baris.charAt(0)!='4'));
+        }while((baris.charAt(0)!='S'));
        
 
         // Tunggu 2 detik

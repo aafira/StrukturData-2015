@@ -24,7 +24,7 @@ public class Client {
             Scanner keyboard = new Scanner(System.in);
             System.out.print("Perintah: ");
             ketikanSatuBaris = keyboard.nextLine();
-            ketikanSatuBaris.toUpperCase();
+            ketikanSatuBaris = ketikanSatuBaris.toUpperCase();
             // Tulis ke socket
             Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
             BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
@@ -32,7 +32,7 @@ public class Client {
             keluaranBuff.write("\n");
             keluaranBuff.flush();
             
-            if((ketikanSatuBaris.charAt(0))=='j'){
+            if((ketikanSatuBaris.charAt(0))=='J'){
                 System.out.print("Server: ");
                 Reader masukan = new InputStreamReader(socket.getInputStream()); 
                 BufferedReader masukanBuff = new BufferedReader(masukan);
