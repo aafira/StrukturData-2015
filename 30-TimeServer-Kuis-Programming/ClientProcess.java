@@ -90,8 +90,6 @@ public class ClientProcess implements Runnable {
         }
         else if ((hasil[0].compareTo("WAKTU")==0) && Character.isDigit(hasil[1].charAt(0))) 
         {
-          //else if ((hasil[0].compareTo("WAKTU")==0) && Integer.parseInt(hasil[1])==2){
-
             N = Integer.parseInt(hasil[1]);
             
             //menambah waktu sesuai N
