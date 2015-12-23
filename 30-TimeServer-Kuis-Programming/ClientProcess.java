@@ -104,6 +104,22 @@ public class ClientProcess implements Runnable {
             keluaranWriter.newLine();
             keluaranWriter.flush();
         }
+        else if ((hasil[0].compareTo("WAKTU")==0) && Character.isDigit(hasil[1].charAt(1))) 
+        {
+          //else if ((hasil[0].compareTo("WAKTU")==0) && Integer.parseInt(hasil[1])==2){
+
+            N = Integer.parseInt(hasil[1]);
+            
+            //menambah waktu sesuai N
+            kalender.add(Calendar.HOUR_OF_DAY, N);
+            
+            //konversi waktu ke string
+            String waktuStr = kalender.getTime().toString();
+            
+            keluaranWriter.write(waktuStr);            
+            keluaranWriter.newLine();
+            keluaranWriter.flush();
+        }
         else
         {
             String notif = "Perintah tidak dikenal!";
