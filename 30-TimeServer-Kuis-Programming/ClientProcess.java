@@ -108,7 +108,7 @@ public class ClientProcess implements Runnable {
         {
             N = Integer.parseInt(hasil[1]);
             
-            //menambah waktu sesuai N
+            //mengurangi waktu sesuai N
             kalender.add(Calendar.HOUR_OF_DAY, N);
             
             //konversi waktu ke string
