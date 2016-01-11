@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=koneksi\ simpan
+comment0.target=ClientProcess(java.net.Socket,\ Penyimpanan)
+comment1.params=
+comment1.target=void\ run()
+comment2.params=
+comment2.target=void\ tangani()
+comment3.params=protokol
+comment3.target=void\ tanganiSensor(java.lang.String[])
+comment4.params=protokol
+comment4.target=void\ tanganiClient2(java.lang.String[])
+comment5.params=protokol
+comment5.target=void\ tanganiClient3(java.lang.String[])
+comment6.params=
+comment6.target=void\ perintahTakDikenal()
+comment7.params=id
+comment7.target=boolean\ isID(java.lang.String)
+comment8.params=data\ i
+comment8.target=boolean\ isData(java.lang.String[],\ int)
+numComments=9

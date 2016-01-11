@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Penyimpanan()
+comment1.params=id\ waktu\ suhu\ lembab\ uv\ nitrogen
+comment1.target=void\ isiData(java.lang.String,\ java.util.Date,\ java.lang.String[],\ java.lang.String[],\ java.lang.String[],\ java.lang.String[])
+comment2.params=
+comment2.target=java.lang.String\ getLastHour()
+comment3.params=
+comment3.target=void\ showData()
+comment4.params=Id\ data\ jamTerakhir\ satuJamSebelumnya
+comment4.target=java.lang.String\ getData(java.lang.String,\ java.lang.String,\ java.util.Date,\ java.util.Date)
+comment5.params=Id\ data\ pertama\ kedua
+comment5.target=java.lang.String\ getDataWaktu(java.lang.String,\ java.lang.String,\ java.util.Date,\ java.util.Date)
+numComments=6
